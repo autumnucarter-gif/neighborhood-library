@@ -8,7 +8,6 @@ public class NeighborhoodLibrary {
     public static void main(String[] args) {
 
 
-
         books[0] = new Library(1001, "978-0316327336", "Twilight", true, "");
         books[1] = new Library(1002, "978-0316327787", "Twilight: New Moon", false, "");
         books[2] = new Library(1003, "978-0316328142", "Twilight: Eclipse", true, "");
@@ -28,21 +27,40 @@ public class NeighborhoodLibrary {
         books[16] = new Library(1018, "978-1781102435", "Harry Potter and the Deathly Hallows", false, "");
         books[17] = new Library(1019, "978-1613122440", "Diary of a Wimpy Kid: Rodrick Rules", true, "");
         books[18] = new Library(1020, "978-0810970687", "Diary of a Wimpy Kid: The Last Straw", true, "");
+
+        Scanner myscanner = new Scanner(System.in);
+        boolean isFinished = false;
+
+
+        while (!isFinished) {
+            System.out.println("=========== Library Searcher ===========");
+            System.out.println("1. Show Available Books ");
+            System.out.println("2. Show Checked Out Books ");
+            System.out.println("3. Exit ");
+
+            int commmand = myscanner.nextInt();
+
+            myscanner.nextLine();
+
+            switch (myscanner.nextLine()) {
+                case "1":
+                    showAvailableBooks();
+                    break;
+                case "2":
+                    checkedOutBooks();
+                    break;
+                case "3":
+                    System.out.println("Exiting Library Searcher. Goodbye! ");
+                    isFinished = true;
+                    break;
+                default:
+                    System.out.println("Sorry, an error occurred. Try again. ");
+                    break;
+            }
+        }
+    }
+    public static void showAvailableBooks() {
+
     }
 
-    }
-
-
-
-
-
-         /*
-
-        /*maybe you dowhile/some type of loop and if statement inside, use if.contains to see if book is available
-        * go to vehicle inventory,
-
-        for (int i = 0; i < books.length; i++) {
-            String book = books[i];*/
-
-
-        //List<Library> books = new ArrayList<>();//
+}
