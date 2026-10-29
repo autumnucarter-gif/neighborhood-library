@@ -10,9 +10,9 @@ public class Library {
     public Library(int bookID, String isbn, String title, boolean isCheckedOut, String checkedOutTo) {
         this.bookID = bookID;
         this.isbn = isbn;
-        this.checkedOutTo = checkedOutTo;
-        this.isCheckedOut = isCheckedOut;
         this.title = title;
+        this.isCheckedOut = isCheckedOut;
+        this.checkedOutTo = checkedOutTo;
     }
 
     public int getBookID() {
@@ -54,12 +54,13 @@ public class Library {
     public void setCheckedOut(boolean checkedOut) {
         isCheckedOut = checkedOut;
     }
-    public void checkOut(String checkOut){
-        System.out.println("Would you like check out" );
+    public void checkOut(String name){
+        System.out.println("Hello, " + name + " you checked out " + title );
     }
 
-    public void checkIn() {
-        System.out.println("Would you like to return");
+    public void checkIn(String name) {
+        System.out.println("Hello, " + name + " you've returned " + title);
+        this.isCheckedOut = false;
     }
 
     @Override
